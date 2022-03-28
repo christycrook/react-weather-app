@@ -9,7 +9,7 @@ const CitySearch = () => {
         fetch(`${ API_BASE_URL}/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`)
             .then((response) => response.json())
             .then((result) => console.log(result));
-    }
+    };
 
     
         return(
