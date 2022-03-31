@@ -3,14 +3,14 @@ import Card from "@mui/material/Card";
 import Typography from '@mui/material/Typography';
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import { Grid } from "@mui/material";
-import { Container } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 
 const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
     const date = new Date(dt);
     return (
         <Container fixed>
-            <Grid xs={6} md={4}
+            <Grid
                 container spacing={2}
                 direction="row"
             >

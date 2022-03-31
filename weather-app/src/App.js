@@ -10,7 +10,7 @@ function App() {
       <br></br>
       <br></br>
       <WeatherCard 
-        dt={1648609200}
+        dt={1648771200 * 1000}
         temp_min="72.9"
         temp_max="74.16"
         main="Clouds"
