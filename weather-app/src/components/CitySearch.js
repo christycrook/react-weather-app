@@ -1,33 +1,33 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import { API_KEY, API_BASE_URL } from '../api';
+// import { API_KEY, API_BASE_URL } from '../api';
 import WeatherCard from './WeatherCard';
 
-const CitySearch = () => {
-    const [city, setCity] = useState('');
+const CitySearch = ({onSearch}) => {
+    const [zip, setZip] = useState('');
 
-    const onSearch = () => {
-        fetch(`${ API_BASE_URL}/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`)
-            .then((response) => response.json())
-            .then((result) => console.log(result));
-    };
+    // const onSearch = () => {
+    //     fetch(`${ API_BASE_URL}/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`)
+    //         .then((response) => response.json())
+    //         .then((result) => console.log(result));
+    // };
 
     
         return(
             <form>
-                <h1>Search Your City</h1>
+                <h1>Check the Weather</h1>
                 <input 
                     type="text"
-                    placeholder='Search Your City'
-                    onChange={(event) => setCity(event.target.value)}
-                    value={city}
+                    placeholder='Enter Zip Code'
+                    onChange={(event) => setZip(event.target.value)}
+                    value={zip}
                 >
                 </input>
                 <br></br>
                 <br></br>
                 <Button 
                     variant="contained" 
-                    onClick={onSearch}
+                    onClick={() => onSearch(zip)}
                     onSubmit={WeatherCard}
                 >Check Weather</Button>
             </form>

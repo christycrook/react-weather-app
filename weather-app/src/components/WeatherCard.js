@@ -5,25 +5,27 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import { CardActionArea } from "@mui/material";
+import CardActionArea from "@mui/material/CardActionArea";
 
 const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
     const date = new Date(dt);
     return (
-        <Container >
+        <Container fixed>
+            <br></br>
             <Grid
                 container spacing={2}
                 direction="row"
                 justifyContent="center"
+                alignItems="center"
             >
                 <Card 
                     sx={{ maxWidth: 225}}
-                    variant="outlined"
+                    // variant="outlined"
                 >
                     <CardActionArea>
                         <CardMedia
                             component="img"
-                            height="194"
+                            // height="194"
                             src={`http://openweathermap.org/img/wn/${icon}@2x.png`}>
                         </CardMedia>
                         <CardContent>
@@ -43,6 +45,7 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
                     </CardActionArea>
                 </Card>
             </Grid>
+            <br/>
         </Container>
     )
 };
