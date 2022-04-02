@@ -1,22 +1,22 @@
 import React from 'react';
 import './App.css';
+import { Container } from '@mui/material';
 import CitySearch from './components/CitySearch';
-import WeatherCard from './components/WeatherCard';
+import FetchData from './FetchData';
+import {API_KEY, API_BASE_URL} from './api';
+import WeatherWeek from './components/WeatherWeek';
 
 function App() {
+
+  const { data, error, isLoading, setUrl} = FetchData();
+  console.log(data);
+
   return (
-    <div className="App">
-      <CitySearch />
-      <br></br>
-      <br></br>
-      <WeatherCard 
-        dt={1648771200 * 1000}
-        temp_min="72.9"
-        temp_max="74.16"
-        main="Clouds"
-        icon="04n"
-      />
-    </div>
+    <Container className="App">
+      <CitySearch className="CitySearch" onSearch={(zip) => setUrl(`${API_BASE_URL}/data/2.5/forecast?q=${zip}, us&cnt=5&appid=${API_KEY}&units=imperial`)}/>
+
+      {data && <WeatherWeek className="WeatherWeek"weathers={data.list} />}
+    </Container>
   );
 }
 
