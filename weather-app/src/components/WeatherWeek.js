@@ -1,9 +1,18 @@
 import React from "react";
+import { Box } from "@mui/material";
 import WeatherCard from "./WeatherCard";
 
 const WeatherWeek = ({weathers}) => {
     return (
-       <div>
+       <Box
+             sx={{
+              display: "inline-flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              flexWrap: "wrap",
+              maxWidth: "100%"
+            }}
+        >
            {weathers.map(({dt, main, weather}) => (
                <div>
                    <WeatherCard
@@ -15,7 +24,7 @@ const WeatherWeek = ({weathers}) => {
                     />
                </div>
            ))}
-       </div>
+       </Box>
     )
 };
 

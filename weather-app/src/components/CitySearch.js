@@ -15,21 +15,24 @@ const CitySearch = ({onSearch}) => {
     
         return(
             <form>
-                <h1>Check the Weather</h1>
+                <h1>Check Your Local Weather</h1>
                 <input 
+                    style={{marginBottom: 20}}
                     type="text"
                     placeholder='Enter Zip Code'
                     onChange={(event) => setZip(event.target.value)}
                     value={zip}
                 >
                 </input>
-                <br></br>
-                <br></br>
+                <div>
+
                 <Button 
+                    style={{marginBottom: 40}}
                     variant="contained" 
                     onClick={() => onSearch(zip)}
                     onSubmit={WeatherCard}
                 >Check Weather</Button>
+                </div>
             </form>
         )
     
