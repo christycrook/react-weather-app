@@ -13,3 +13,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+p {
+  text-align: center;
+}
