@@ -7,8 +7,19 @@ import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
 import Box from "@mui/material/Box";
 
-const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
-    const date = new Date(dt);
+import WeatherHourCard from "./WeatherHourCard";
+
+const WeatherCard = ({main, temp_max, temp_min, icon}) => {
+    // const date = new Date(dt);
+    const dates = [
+        "Sunday", 
+        "Monday", 
+        "Tuesday", 
+        "Wednesday", 
+        "Thursday", 
+        "Friday", 
+        "Saturday"
+    ];
     
     return (
         <Box 
@@ -22,11 +33,11 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
           }}
         >
             <Card 
-                sx={{width: 230}}
+                sx={{width: 230, height: 400}}
 
                 // variant="outlined"
             >
-                <CardActionArea>
+                <CardActionArea >
                     <CardMedia
                         component="img"
                         src={`http://openweathermap.org/img/wn/${icon}@2x.png`}>
@@ -36,7 +47,7 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
                             {main}
                         </Typography>
                         <Typography>
-                            {date.toLocaleDateString()} - {date.toLocaleTimeString()}
+                            {dates.toString()}
                         </Typography>
                         <Typography>
                            Min: {temp_min}

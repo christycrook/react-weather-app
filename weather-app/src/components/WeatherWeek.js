@@ -3,6 +3,8 @@ import { Box } from "@mui/material";
 import WeatherCard from "./WeatherCard";
 
 const WeatherWeek = ({weathers}) => {
+   
+
     return (
        <Box
              sx={{
@@ -13,14 +15,14 @@ const WeatherWeek = ({weathers}) => {
               maxWidth: "100%"
             }}
         >
-           {weathers.map(({dt, main, weather}) => (
+           {weathers.map(({main, weather}) => (
                <div>
                    <WeatherCard
                     temp_max={main.temp_max}
                     temp_min={main.temp_min}
-                    dt={dt * 1000}
                     main={weather[0].main}
                     icon={weather[0].icon}
+                    
                     />
                </div>
            ))}
