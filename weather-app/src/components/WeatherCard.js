@@ -3,12 +3,8 @@ import React from "react";
 import Card from "@mui/material/Card";
 import Typography from '@mui/material/Typography';
 import CardMedia from "@mui/material/CardMedia";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
-
-import WeatherHour from "./WeatherHour";
-import { Button } from "@mui/material";
 
 const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
     const date = new Date(dt);
@@ -50,10 +46,10 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
                             {date.toLocaleDateString}
                         </Typography>
                         <Typography>
-                           Min: {temp_min}
+                           Min: {temp_min} F
                         </Typography>
                         <Typography>
-                            Max: {temp_max}
+                            Max: {temp_max} F
                         </Typography>
                     </CardContent>
             </Card>

@@ -3,21 +3,23 @@ import Card from "@mui/material/Card";
 import Typography from '@mui/material/Typography';
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
+import { Box } from "@mui/material";
 
-const WeatherHourCard = ({dt, main, temp_max, temp_min, icon}) => {
+const WeatherHourList = ({dt, main, temp_max, temp_min, icon}) => {
     const date = new Date(dt);
     return (
-        <Container fixed>
-            <Grid
-                container spacing={2}
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
+       
+            <Box
+            sx={{
+                display: "inline-flex",
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                alignContent: "flex-end",
+                alignItems: "center",
+            }}
             >
                 <Card 
-                    sx={{ maxWidth: 230, height: 400}}
+                    sx={{ maxWidth: 164, height: 250}}
                     // variant="outlined"
                 >
                     <CardMedia
@@ -33,16 +35,15 @@ const WeatherHourCard = ({dt, main, temp_max, temp_min, icon}) => {
                             {date.toLocaleTimeString()}
                         </Typography>
                         <Typography>
-                           Min: {temp_min}
+                           Min: {temp_min} F
                         </Typography>
                         <Typography>
-                            Max: {temp_max}
+                            Max: {temp_max} F
                         </Typography>
                     </CardContent>
                 </Card>
-            </Grid>
-        </Container>
+            </Box>
     )
 };
 
-export default WeatherHourCard;
+export default WeatherHourList;

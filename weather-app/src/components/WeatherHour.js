@@ -1,9 +1,17 @@
+import { Box } from "@mui/material";
 import React from "react";
 import WeatherHourCard from "./WeatherHourCard";
 
-const WeatherHour = (hourly) => {
+const WeatherHour = ({hourly}) => {
     return (
-        <div>
+        <Box
+        sx={{
+            display: "inline-flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            flexWrap: "wrap",
+            maxWidth: "100%",
+          }}>
             {hourly.map(({dt, main, weather}) => (
             <div>
                 <WeatherHourCard 
@@ -15,7 +23,7 @@ const WeatherHour = (hourly) => {
                 />
             </div>
             ))}
-        </div>
+        </Box>
     )
 };
 
