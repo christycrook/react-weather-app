@@ -1,3 +1,15 @@
+html {
+  /* Created with https://www.css-gradient.com */
+height: 100%;
+background: linear-gradient(to bottom right, #6BC4E5, #6379D3);
+}
 .App {
   text-align: center;
+};
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

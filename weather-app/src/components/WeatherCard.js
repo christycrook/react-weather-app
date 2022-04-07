@@ -23,7 +23,7 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
     // ];
     
     return (
-        <Box 
+        <Box
           sx={{
               display: "inline-flex",
               flexDirection: "row",
@@ -34,7 +34,7 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
           }}
         >
             <Card 
-                sx={{width: 230, height: 400}}
+                sx={{width: 164, height: 350}}
 
                 // variant="outlined"
             >
@@ -55,11 +55,6 @@ const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
                         <Typography>
                             Max: {temp_max}
                         </Typography>
-                        <CardActions >
-                            <Button >
-                                See More
-                            </Button>
-                        </CardActions>
                     </CardContent>
             </Card>
         </Box>

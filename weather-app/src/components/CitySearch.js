@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-// import { API_KEY, API_BASE_URL } from '../api';
-import WeatherCard from './WeatherCard';
 
 const CitySearch = ({onSearch}) => {
     const [zip, setZip] = useState('');
 
     // const onSearch = () => {
-    //     fetch(`${ API_BASE_URL}/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`)
+    //     fetch(`${ API_BASE_URL}/data/2.5/forecast?q=${zip}, us&cnt=7&appid=${REACT_APP_API_KEY}&units=imperial`)
     //         .then((response) => response.json())
     //         .then((result) => console.log(result));
     // };
@@ -30,7 +28,6 @@ const CitySearch = ({onSearch}) => {
                     style={{marginBottom: 40}}
                     variant="contained" 
                     onClick={() => onSearch(zip)}
-                    onSubmit={WeatherCard}
                 >Check Weather</Button>
                 </div>
             </form>
