@@ -3,23 +3,24 @@ import React from "react";
 import Card from "@mui/material/Card";
 import Typography from '@mui/material/Typography';
 import CardMedia from "@mui/material/CardMedia";
+import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardActionArea from "@mui/material/CardActionArea";
 import Box from "@mui/material/Box";
 
-import WeatherHourCard from "./WeatherHourCard";
+import WeatherHour from "./WeatherHour";
+import { Button } from "@mui/material";
 
-const WeatherCard = ({main, temp_max, temp_min, icon}) => {
-    // const date = new Date(dt);
-    const dates = [
-        "Sunday", 
-        "Monday", 
-        "Tuesday", 
-        "Wednesday", 
-        "Thursday", 
-        "Friday", 
-        "Saturday"
-    ];
+const WeatherCard = ({dt, main, temp_max, temp_min, icon}) => {
+    const date = new Date(dt);
+    // const dates = [
+    //     "Sunday", 
+    //     "Monday", 
+    //     "Tuesday", 
+    //     "Wednesday", 
+    //     "Thursday", 
+    //     "Friday", 
+    //     "Saturday"
+    // ];
     
     return (
         <Box 
@@ -37,7 +38,6 @@ const WeatherCard = ({main, temp_max, temp_min, icon}) => {
 
                 // variant="outlined"
             >
-                <CardActionArea >
                     <CardMedia
                         component="img"
                         src={`http://openweathermap.org/img/wn/${icon}@2x.png`}>
@@ -47,7 +47,7 @@ const WeatherCard = ({main, temp_max, temp_min, icon}) => {
                             {main}
                         </Typography>
                         <Typography>
-                            {dates.toString()}
+                            {date.toLocaleDateString}
                         </Typography>
                         <Typography>
                            Min: {temp_min}
@@ -55,8 +55,12 @@ const WeatherCard = ({main, temp_max, temp_min, icon}) => {
                         <Typography>
                             Max: {temp_max}
                         </Typography>
+                        <CardActions >
+                            <Button >
+                                See More
+                            </Button>
+                        </CardActions>
                     </CardContent>
-                </CardActionArea>
             </Card>
         </Box>
     )
